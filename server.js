@@ -12,6 +12,7 @@ const server = http.createServer((request, response) => {
     const html = fs.readFileSync('index.html', 'utf8');
     response.end(html);//обработали запрос и его можно завершить
 });
-server.listen(3000);// запуск сервера
+console.log('port = ', process.env.PORT); // получаем адрес порта от хероку
+server.listen(process.env.PORT || 3000);// запуск сервера
 console.log('Server started!');
 
